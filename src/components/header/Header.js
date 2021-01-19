@@ -1,7 +1,7 @@
 import React from "react";
 import SearchIcon from "@material-ui/icons/Search";
 import linkedin from "../../images/linkedin.svg";
-import avatar from "../../images/avatar.jpeg";
+// import avatar from "../../images/avatar.jpeg";
 import "./Header.css";
 import HeaderOptions from "../headerOptions/HeaderOptions";
 import HomeIcon from "@material-ui/icons/Home";
@@ -37,7 +37,7 @@ function Header() {
         <HeaderOptions Icon={BusinessCenterIcon} title="Job" />
         <HeaderOptions Icon={ChatIcon} title="Messaging" />
         <HeaderOptions Icon={NotificationsIcon} title="Notifications" />
-        <HeaderOptions avatar={avatar} title="Me" onClick={logoutOfApp} />
+        <HeaderOptions avatar={true} title="Me" onClick={logoutOfApp} />
       </div>
     </div>
   );
