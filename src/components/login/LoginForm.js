@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { auth } from "../../firebase";
 import { login } from "../../redux/userSlice";
+import FormInputs from "./FormInputs";
 
 function LoginForm() {
   const [email, setEmail] = useState("");
@@ -56,34 +57,17 @@ function LoginForm() {
   return (
     <>
       <form>
-        <input
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          type="text"
-          placeholder="Full name"
+        <FormInputs
+          name={name}
+          setName={setName}
+          profilePic={profilePic}
+          setProfilePic={setProfilePic}
+          email={email}
+          setEmail={setEmail}
+          password={password}
+          setPassword={setPassword}
+          loginToApp={loginToApp}
         />
-        <input
-          value={profilePic}
-          onChange={(e) => setProfilePic(e.target.value)}
-          type="text"
-          placeholder="Profile pic URL"
-        />
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Enter email"
-        />
-        <input
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          type="password"
-          placeholder="Enter password"
-        />
-        <button type="submit" onClick={loginToApp}>
-          {" "}
-          Sign in
-        </button>
       </form>
       <p>
         Not a member?{" "}

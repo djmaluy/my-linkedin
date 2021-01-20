@@ -1,7 +1,4 @@
 import React from "react";
-import SearchIcon from "@material-ui/icons/Search";
-import linkedin from "../../images/linkedin.svg";
-// import avatar from "../../images/avatar.jpeg";
 import "./Header.css";
 import HeaderOptions from "../headerOptions/HeaderOptions";
 import HomeIcon from "@material-ui/icons/Home";
@@ -12,6 +9,7 @@ import NotificationsIcon from "@material-ui/icons/Notifications";
 import { useDispatch } from "react-redux";
 import { logout } from "../../redux/userSlice";
 import { auth } from "../../firebase";
+import Logo from "./Logo";
 
 function Header() {
   const dispatch = useDispatch();
@@ -23,14 +21,7 @@ function Header() {
 
   return (
     <div className="header">
-      <div className="header__left">
-        <img src={linkedin} alt="logo" />
-        <div className="header__search">
-          <SearchIcon />
-          <input type="text" placeholder="Search"></input>
-        </div>
-      </div>
-
+      <Logo />
       <div className="header__right">
         <HeaderOptions Icon={HomeIcon} title="Home" />
         <HeaderOptions Icon={SupervisorAccountIcon} title="My Network" />

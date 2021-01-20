@@ -3,16 +3,10 @@ import React from "react";
 import { selectUser } from "../../redux/userSlice";
 import { useSelector } from "react-redux";
 import "./Sidebar.css";
+import RecentItem from "./RecentItem";
 
 function Sidebar() {
   const user = useSelector(selectUser);
-
-  const recentItem = (topic) => (
-    <div className="sidebar__resentItem">
-      <span className="sidebar__hash">#</span>
-      <p>{topic}</p>
-    </div>
-  );
 
   return (
     <div className="sidebar">
@@ -37,13 +31,9 @@ function Sidebar() {
           <p className="sidebar_statNumber">321</p>
         </div>
       </div>
+
       <div className="sidebar__bottom">
-        <p>Recent</p>
-        {recentItem("React developers")}
-        {recentItem("Front-end developers")}
-        {recentItem("Linux")}
-        {recentItem("ISTQB")}
-        {recentItem("Design")}
+        <RecentItem />
       </div>
     </div>
   );
